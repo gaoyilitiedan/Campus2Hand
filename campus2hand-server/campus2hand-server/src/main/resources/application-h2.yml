@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:campus2hand;MODE=MySQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  flyway:
+    enabled: false
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/h2/schema.sql
+  data:
+    redis:
+      host: localhost
+      port: 6379
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 3000ms
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  mail:
+    host: localhost
+    port: 25
+    username: test@campus2hand.com
+    password: test
+    nickname: Campus2Hand
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.campus2hand: DEBUG
+    org.springframework: INFO
+    org.mybatis: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+
+server:
+  port: 8080

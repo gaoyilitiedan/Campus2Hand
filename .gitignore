@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Java / Maven
+target/
+*.class
+*.jar
+!campus2hand-server/*/target/*.jar
+
+# Playwright
+test-results/
+playwright-report/
+tests/.auth/
+
+# Test artifacts
+test-output.json
+test-output.txt
+test-result.json
+test-log.txt
+test-run.log
+results.json
+
+# Runtime
+app_output.log
+run_output.log
+run_error.log
+debug.log
+
+# Temp
+*.tmp
+*.swp
+*.swo
+*~

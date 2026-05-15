@@ -1,0 +1,10 @@
+package com.campus2hand.auth.dto;
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.Data;
+
+@Data
+public class ForgotPasswordRequest {
+    @NotBlank(message = "学号不能为空")
+    private String studentId;
+}
