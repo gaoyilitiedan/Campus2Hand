@@ -29,48 +29,54 @@
 
 ```
 Campus2Hand/
-├── src/                          # 前端源码
-│   ├── api/                      # API 接口封装
-│   │   ├── auth.ts               # 认证接口
-│   │   ├── index.ts              # 通用接口
-│   │   ├── order.ts              # 订单接口
-│   │   ├── product.ts            # 商品接口
-│   │   └── request.ts            # Axios 请求封装
-│   ├── assets/                   # 静态资源
-│   ├── components/               # 公共组件
-│   │   ├── AppHeader.vue         # 顶部导航栏
-│   │   ├── AppSidebar.vue        # 侧边栏
-│   │   ├── ImageCarousel.vue     # 图片轮播
-│   │   ├── Pagination.vue        # 分页组件
-│   │   ├── ProductCard.vue       # 商品卡片
-│   │   ├── StarRating.vue        # 星级评分
-│   │   └── StatusBadge.vue       # 状态标签
-│   ├── layouts/                  # 布局组件
-│   ├── mock/                     # Mock 数据
-│   ├── router/                   # 路由配置
-│   ├── store/                    # Pinia 状态管理
-│   ├── utils/                    # 工具函数
-│   └── views/                    # 页面组件
-│       ├── Home.vue              # 首页（商品搜索浏览）
-│       ├── Login.vue             # 登录页
-│       ├── ProductDetail.vue     # 商品详情
-│       ├── PublishProduct.vue    # 发布商品
-│       ├── MyProducts.vue        # 我的商品
-│       ├── MyOrders.vue          # 我的订单
-│       ├── OrderDetail.vue       # 订单详情
-│       ├── MyReviews.vue         # 我的评价
-│       ├── MyDisputes.vue        # 我的纠纷
-│       ├── Messages.vue          # 消息/聊天
-│       └── Profile.vue           # 个人中心
-├── tests/                        # Playwright E2E 测试
-│   ├── global-setup.ts           # 全局测试初始化（登录态）
-│   ├── api.spec.ts               # API 集成测试
-│   ├── auth.spec.ts              # 认证模块测试
-│   ├── product.spec.ts           # 商品搜索与浏览测试
-│   ├── publish.spec.ts           # 商品发布测试
-│   ├── order.spec.ts             # 订单模块测试
-│   └── profile.spec.ts           # 用户中心测试
-├── campus2hand-server/           # 后端微服务模块
+├── frontend/                     # 前端（Vue 3 + Vite）
+│   ├── src/                      # Vue 源码
+│   │   ├── api/                  # API 接口封装
+│   │   │   ├── auth.ts           # 认证接口
+│   │   │   ├── index.ts          # 通用接口
+│   │   │   ├── order.ts          # 订单接口
+│   │   │   ├── product.ts        # 商品接口
+│   │   │   └── request.ts        # Axios 请求封装
+│   │   ├── assets/               # 静态资源
+│   │   ├── components/           # 公共组件
+│   │   │   ├── AppHeader.vue     # 顶部导航栏
+│   │   │   ├── AppSidebar.vue    # 侧边栏
+│   │   │   ├── ImageCarousel.vue # 图片轮播
+│   │   │   ├── Pagination.vue    # 分页组件
+│   │   │   ├── ProductCard.vue   # 商品卡片
+│   │   │   ├── StarRating.vue    # 星级评分
+│   │   │   └── StatusBadge.vue   # 状态标签
+│   │   ├── layouts/              # 布局组件
+│   │   ├── mock/                 # Mock 数据
+│   │   ├── router/               # 路由配置
+│   │   ├── store/                # Pinia 状态管理
+│   │   ├── utils/                # 工具函数
+│   │   └── views/                # 页面组件
+│   │       ├── Home.vue          # 首页（商品搜索浏览）
+│   │       ├── Login.vue         # 登录页
+│   │       ├── ProductDetail.vue # 商品详情
+│   │       ├── PublishProduct.vue# 发布商品
+│   │       ├── MyProducts.vue    # 我的商品
+│   │       ├── MyOrders.vue      # 我的订单
+│   │       ├── OrderDetail.vue   # 订单详情
+│   │       ├── MyReviews.vue     # 我的评价
+│   │       ├── MyDisputes.vue    # 我的纠纷
+│   │       ├── Messages.vue      # 消息/聊天
+│   │       └── Profile.vue       # 个人中心
+│   ├── tests/                    # Playwright E2E 测试
+│   │   ├── global-setup.ts       # 全局测试初始化（登录态）
+│   │   ├── api.spec.ts           # API 集成测试
+│   │   ├── auth.spec.ts          # 认证模块测试
+│   │   ├── product.spec.ts       # 商品搜索与浏览测试
+│   │   ├── publish.spec.ts       # 商品发布测试
+│   │   ├── order.spec.ts         # 订单模块测试
+│   │   └── profile.spec.ts       # 用户中心测试
+│   ├── package.json              # npm 依赖配置
+│   ├── vite.config.ts            # Vite 构建配置
+│   ├── playwright.config.ts      # Playwright 测试配置
+│   ├── tsconfig.json             # TypeScript 配置
+│   └── index.html                # 入口 HTML
+├── backend/                      # 后端（Spring Boot 微服务）
 │   ├── campus2hand-common/       # 公共模块（异常、工具、配置）
 │   ├── campus2hand-auth/         # 认证服务（登录、注册、JWT）
 │   ├── campus2hand-product/      # 商品服务（发布、搜索、管理）
@@ -85,15 +91,15 @@ Campus2Hand/
 │   ├── campus2hand-server/       # 服务聚合启动模块
 │   ├── seed_mysql.sql            # 数据库初始化脚本
 │   └── pom.xml                   # Maven 父 POM
-├── API接口设计.md                 # API 接口文档
-├── spec.md                       # 功能规格说明书
-├── 系统架构设计与技术选型.md        # 架构设计文档
-├── 数据库设计与初始化.md            # 数据库设计文档
-├── playwright.config.ts          # Playwright 测试配置
-├── vite.config.ts                # Vite 构建配置
-├── tsconfig.json                 # TypeScript 配置
-├── package.json                  # 前端依赖配置
-└── index.html                    # 入口 HTML
+├── docs/                         # 项目文档
+│   ├── spec.md                   # 功能规格说明书
+│   ├── API接口设计.md             # API 接口文档
+│   ├── 系统架构设计与技术选型.md    # 架构设计文档
+│   ├── 数据库设计与初始化.md        # 数据库设计文档
+│   ├── tasks.md                  # 任务清单
+│   └── checklist.md              # 检查清单
+├── README.md                     # 项目说明
+└── .gitignore                    # Git 忽略规则
 ```
 
 ## 环境要求
@@ -120,6 +126,9 @@ cd Campus2Hand
 ### 2. 前端启动
 
 ```bash
+# 进入前端目录
+cd frontend
+
 # 安装依赖
 npm install
 
@@ -143,12 +152,12 @@ mysql -u root -p
 CREATE DATABASE campus2hand DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 # 导入初始化数据
-mysql -u root -p campus2hand < campus2hand-server/seed_mysql.sql
+mysql -u root -p campus2hand < backend/seed_mysql.sql
 ```
 
 #### 3.2 配置数据库连接
 
-编辑 `campus2hand-server/campus2hand-server/src/main/resources/application.yml`：
+编辑 `backend/campus2hand-server/src/main/resources/application.yml`：
 
 ```yaml
 spring:
@@ -164,7 +173,7 @@ spring:
 #### 3.3 启动后端服务
 
 ```bash
-cd campus2hand-server
+cd backend
 
 # 编译打包
 mvn clean package -DskipTests
@@ -226,6 +235,9 @@ java -jar campus2hand-server-1.0.0-SNAPSHOT.jar
 项目包含 91 个 Playwright E2E 测试用例，覆盖所有核心功能模块。
 
 ```bash
+# 进入前端目录
+cd frontend
+
 # 运行全部测试
 npm test
 
@@ -253,7 +265,7 @@ npx playwright show-report
 
 ## API 接口
 
-完整 API 接口文档请参阅 [API接口设计.md](./API接口设计.md)。
+完整 API 接口文档请参阅 [API接口设计.md](./docs/API接口设计.md)。
 
 ### 接口概览
 
@@ -292,9 +304,10 @@ npx playwright show-report
 
 ```bash
 # 构建生产版本
+cd frontend
 npm run build
 
-# dist/ 目录即为静态文件，可部署到 Nginx 或 CDN
+# frontend/dist/ 目录即为静态文件，可部署到 Nginx 或 CDN
 ```
 
 Nginx 配置示例：
@@ -304,7 +317,7 @@ server {
     listen 80;
     server_name campus2hand.example.com;
 
-    root /var/www/campus2hand/dist;
+    root /var/www/campus2hand/frontend/dist;
     index index.html;
 
     location / {
@@ -322,7 +335,7 @@ server {
 ### 后端部署
 
 ```bash
-cd campus2hand-server
+cd backend
 mvn clean package -DskipTests
 
 # 运行 JAR
@@ -332,10 +345,10 @@ java -jar campus2hand-server/campus2hand-server/target/campus2hand-server-1.0.0-
 
 ## 相关文档
 
-- [功能规格说明书](./spec.md)
-- [API 接口设计](./API接口设计.md)
-- [系统架构设计与技术选型](./系统架构设计与技术选型.md)
-- [数据库设计与初始化](./数据库设计与初始化.md)
+- [功能规格说明书](./docs/spec.md)
+- [API 接口设计](./docs/API接口设计.md)
+- [系统架构设计与技术选型](./docs/系统架构设计与技术选型.md)
+- [数据库设计与初始化](./docs/数据库设计与初始化.md)
 
 ## License
 
