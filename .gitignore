@@ -1,8 +1,8 @@
 # Dependencies
-node_modules/
+**/node_modules/
 
 # Build output
-dist/
+frontend/dist/
 
 # Environment variables
 .env
@@ -23,15 +23,17 @@ Thumbs.db
 npm-debug.log*
 
 # Java / Maven
-target/
+**/target/
 *.class
 *.jar
-!campus2hand-server/*/target/*.jar
+!backend/*/target/*.jar
 
 # Playwright
 test-results/
 playwright-report/
-tests/.auth/
+frontend/test-results/
+frontend/playwright-report/
+frontend/tests/.auth/
 
 # Test artifacts
 test-output.json
